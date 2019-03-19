@@ -1,5 +1,4 @@
-private Item[] store = 
-{
+private Item[] store = {
   new Item(184, 14), 
   new Item(196, 60), 
   new Item(206, 31), 
@@ -21,8 +20,7 @@ private Item[] store =
   new Item(18871, 69), 
   new Item(19967, 45)
 };                             
-public int linearSearch(int catNumToFind)
-{
+public int linearSearch(int catNumToFind){
   for(int i = 0; i < store.length; i++){
     if(store[i].getCatNum() == catNumToFind){
       return store[i].getInventory();
@@ -30,8 +28,7 @@ public int linearSearch(int catNumToFind)
   }
   return -1;
 }
-public int recursiveLinearSearch(int catNumToFind, int startIndex)
-{
+public int recursiveLinearSearch(int catNumToFind, int startIndex){
   if(startIndex >= store.length){
     return - 1;
   }
@@ -42,8 +39,7 @@ public int recursiveLinearSearch(int catNumToFind, int startIndex)
     return recursiveLinearSearch(catNumToFind, startIndex + 1);
   }
 }
-public int binarySearch(int catNumToFind)
-{
+public int binarySearch(int catNumToFind){
   int high = store.length - 1;
   int guess = - 1;
   int low = 0;
@@ -59,8 +55,7 @@ public int binarySearch(int catNumToFind)
   }
   return -1;
 }
-public int recursiveBinarySearch(int catNumToFind, int nLow, int nHigh)
-{
+public int recursiveBinarySearch(int catNumToFind, int nLow, int nHigh){
   int guess = (nHigh + nLow)/2;
   if(store[guess].getCatNum() == catNumToFind){
     return store[guess].getInventory();
@@ -75,8 +70,7 @@ public int recursiveBinarySearch(int catNumToFind, int nLow, int nHigh)
     return recursiveBinarySearch(catNumToFind, nLow, guess - 1);
   }
 }
-public void setup()
-{
+public void setup(){
   int[] tests = {0, 183, 184, 2370, 15320, 19967, 19968};
   System.out.println();
   System.out.println("Testing Non-Recursive Linear Search");
@@ -124,11 +118,9 @@ public void setup()
   }
 }
 
-public void draw()
-{
+public void draw(){
   //empty!
 }
-
 
 
 
